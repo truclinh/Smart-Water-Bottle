@@ -3,12 +3,10 @@
 int thoigian, khoangcach;
 #include<stdlib.h>
 #include <string.h>
-int count =0;
 char command;
 String test;
 boolean check=false;
 int count1;
-int dem=0;
 void setup()
 {
   Serial.begin(9600);
@@ -38,7 +36,7 @@ void loop()
   //nếu như người dùng đã nhấn vào nút bắt đầu bên smartphone
   if(check==true)
      {
-          //CẢM BIẾN SIÊU Âm
+          //CẢM BIẾN SIÊU ÂM
    
          digitalWrite(chanphat,HIGH);
          delayMicroseconds(1000);
@@ -101,7 +99,7 @@ void loop()
      }
   
 }
-//hàm chuyển đổi số nguyên sang char, lâý độ dài
+//hàm chuyển đổi số nguyên sang char, lấy độ dài
 void convertInttoChar(int number)
 {
   count1=0;
