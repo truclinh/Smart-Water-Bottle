@@ -1,6 +1,6 @@
 #define chanphat 7
 #define chanthu 8
-#define led 6
+#define led 4  
 #include<stdlib.h>
 #include <string.h>
 char command;
