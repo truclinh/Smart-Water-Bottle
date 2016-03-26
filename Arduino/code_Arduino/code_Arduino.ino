@@ -14,7 +14,10 @@ void setup()
   pinMode(chanphat,OUTPUT);
   pinMode(chanthu,INPUT);
 }
-
+void ledOff()
+{ 
+    digitalWrite(led,LOW);
+}
 void loop()
 {
   while(Serial.available()>0)
@@ -47,6 +50,7 @@ void loop()
          if(khoang_cach<10)
          {
              Serial.print(khoang_cach);
+             ledOff();
          }
          else 
          {
@@ -55,36 +59,43 @@ void loop()
          case 10:
          {
            Serial.print("a");
+           ledOff();
            break;
          }
           case 11:
          {
            Serial.print("b");
+           ledOff();
            break;
          }
           case 12:
          {
            Serial.print("c");
+           ledOff();
            break;
          }
           case 13:
          {
            Serial.print("d");
+           ledOff();
            break;
          }
            case 14:
          {
            Serial.print("e");
+           ledOff();
            break;
          }
            case 15:
          {
            Serial.print("f");
+           ledOff();
            break;
          }
            case 16:
          {
            Serial.print("g");
+           digitalWrite(led,HIGH);
            break;
          }
          case 17:
