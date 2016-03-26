@@ -1,5 +1,6 @@
 #define chanphat 7
 #define chanthu 8
+#define led 6
 int thoigian, khoangcach;
 #include<stdlib.h>
 #include <string.h>
@@ -10,9 +11,11 @@ int count1;
 void setup()
 {
   Serial.begin(9600);
+  pinMode(led,OUTPUT);
   pinMode(chanphat,OUTPUT);
   pinMode(chanthu,INPUT);
 }
+
 void loop()
 {
   while(Serial.available()>0)
@@ -24,7 +27,6 @@ void loop()
   if (test=="TURN ON")
   {
     check=true;
-    convertInttoChar(123456);
     test="";
     command='\0';    
   }
@@ -89,44 +91,13 @@ void loop()
          case 17:
          {
            Serial.print("h");
+           digitalWrite(led,HIGH);
            break;
          }     
          }
            delay(1000);
-      }
-   
-  
+         }  
      }
-  
-}
-//hàm chuyển đổi số nguyên sang char, lấy độ dài
-void convertInttoChar(int number)
-{
-  count1=0;
-  char NUMBER[5];
-  itoa(number, NUMBER,10);
-  // xác định độ dài của chuỗi
-  for(int i=0;i<sizeof(NUMBER);i++)
-    {
-            if(NUMBER[i]!='\0')
-            {
-               count1+=1; 
-            }
-     }
-     //gửi biến độ dài đi
-     Serial.print(count1);   
-    delay(50);
-  //Gửi thông tin chuổi số đi
-  for(int i=0;i<sizeof(NUMBER);i++)
-    {
-            if(NUMBER[i]!='\0')
-            {
-               Serial.print(NUMBER[i]);  
-              delay(50); 
-            }
-     }
-  
-  
 }
 
 
