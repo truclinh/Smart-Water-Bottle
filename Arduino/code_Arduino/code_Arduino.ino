@@ -1,7 +1,6 @@
 #define chanphat 7
 #define chanthu 8
 #define led 6
-int thoigian, khoangcach;
 #include<stdlib.h>
 #include <string.h>
 char command;
